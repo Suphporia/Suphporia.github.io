@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Stock Diary</title>
+    <script src="main.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/9eb162ac0d.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
+    </style>
+  </head>
+  <body>
+    <section class="title">STOCK DIARY</section>
+    <section class="main">
+      <span class="search_section">
+        <iframe
+          src="https://finance.naver.com/"
+          width="98%"
+          height="98%"
+          allowfullscreen
+          sandbox
+        >
+        </iframe>
+      </span>
+      <span class="diary_section">
+        <div class="calendar">
+          <div class="calendar_container">
+            <table class="calendar_table">
+              <thead>
+                <tr>
+                  <td onClick="prevCalendar();" style="cursor: pointer">
+                    &#60;
+                  </td>
+                  <td colspan="5">
+                    <span id="calYear"></span>년 <span id="calMonth"></span>월
+                  </td>
+                  <td onClick="nextCalendar();" style="cursor: pointer">
+                    &#62;
+                  </td>
+                </tr>
+                <tr>
+                  <td>일</td>
+                  <td>월</td>
+                  <td>화</td>
+                  <td>수</td>
+                  <td>목</td>
+                  <td>금</td>
+                  <td>토</td>
+                </tr>
+              </thead>
+
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="stock_list">
+          <div class="list_title">
+            <header class="headline">
+              &nbsp;&nbsp;&nbsp;&nbsp;STOCK LIST
+              <button class="item_write">
+                <i class="fa-solid fa-pen-nib"></i>
+              </button>
+            </header>
+          </div>
+          <ul class="items"></ul>
+          <form class="footer" onsubmit="return false;">
+            <input
+              type="text"
+              class="stock_input"
+              name="stock-list"
+              placeholder="주식 이름을 입력하세요!"
+            />
+            <input
+              type="text"
+              class="stock_percentage"
+              name="stock-percentage"
+              placeholder="수익률 입력!"
+            />
+          </form>
+        </div>
+        <div class="diary diary--hide">
+          <header class="headline diaryHeadline">STOCK DIARY</header>
+          <textarea
+            name="diary"
+            id="diary"
+            cols="30"
+            rows="10"
+            class="diary_input"
+            placeholder="일기를 작성해보세요!"
+          ></textarea>
+          <div class="diaryBtns">
+            <button class="back">
+              <i class="fa-solid fa-circle-left"></i>
+            </button>
+            <input type="submit" value="SAVE" class="save" />
+          </div>
+        </div>
+      </span>
+    </section>
+  </body>
+</html>
